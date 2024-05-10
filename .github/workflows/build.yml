@@ -11,13 +11,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [20.x]
-
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -33,9 +30,15 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y python3-pip
         pip3 install awscli --upgrade --user
-    - name: Deploy to S3
-      env:
-        ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
-        SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+    - name: Print variables
       run: |
-        aws s3 sync dist/portfolio s3://tr-portfolio-bucket --delete
+        echo "secrets.ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}"
+        echo "secrets.SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}"
+        echo "ACCESS_KEY_ID: $ACCESS_KEY_ID }}"
+        echo "SECRET_ACCESS_KEY: SECRET_ACCESS_KEY }}"
+#    - name: Deploy to S3
+#      env:
+#        ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
+#        SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+#      run: |
+#        aws s3 sync dist/portfolio s3://tr-portfolio-bucket --delete
