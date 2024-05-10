@@ -12,6 +12,12 @@
   --dark: #0b0c10;
   --grey: #1f2833;
   --white: #fff;
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
 }
 
 html, body {
