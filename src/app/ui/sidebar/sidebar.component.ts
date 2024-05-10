@@ -10,7 +10,6 @@ import {NavComponent} from '@ui/nav/nav.component';
     NavComponent
   ],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
 

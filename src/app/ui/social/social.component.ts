@@ -10,7 +10,6 @@ import {LinkedinIconComponent} from '@icons/linkedin-icon/linkedin-icon.componen
     LinkedinIconComponent
   ],
   templateUrl: './social.component.html',
-  styleUrl: './social.component.scss'
 })
 export class SocialComponent {
 
