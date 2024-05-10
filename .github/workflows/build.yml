@@ -36,11 +36,4 @@ jobs:
         ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
         SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
       run: |
-        echo "secrets.ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}"
-        echo "secrets.SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}"
-        echo "ACCESS_KEY_ID: $ACCESS_KEY_ID"
-        echo "SECRET_ACCESS_KEY: $SECRET_ACCESS_KEY"
-        echo $ACCESS_KEY_ID
-        echo $SECRET_ACCESS_KEY
-#      run: |
-#        aws s3 sync dist/portfolio s3://tr-portfolio-bucket --delete
+        aws s3 sync dist/portfolio s3://tr-portfolio-bucket --delete
