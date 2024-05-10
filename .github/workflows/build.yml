@@ -39,4 +39,4 @@ jobs:
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
     - name: Deploy to S3
       run: |
-        aws s3 sync dist/portfolio s3://tr-portfolio-bucket --delete
+        aws s3 sync dist/portfolio/browser s3://tr-portfolio-bucket --delete
