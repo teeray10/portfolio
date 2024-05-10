@@ -31,9 +31,12 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y python3-pip
         pip3 install awscli --upgrade --user
+    - name: "Configure AWS Credentials" Action for GitHub Actions
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-region: af-south-1
+        aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
     - name: Deploy to S3
-      env:
-        ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
-        SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
       run: |
         aws s3 sync dist/portfolio s3://tr-portfolio-bucket --delete
