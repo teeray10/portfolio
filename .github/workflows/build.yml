@@ -50,6 +50,6 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        source: "dist/portfolio/browser/*"
+        source: "dist/portfolio/browser/*.js"
         target: /var/www/html
 
