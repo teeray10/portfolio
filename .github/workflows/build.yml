@@ -39,17 +39,5 @@ jobs:
         aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
     - name: Deploy to S3
       run: |
-        aws s3 sync dist/portfolio/browser s3://tr-portfolio-bucket --delete
-#    - name: Deploy to EC2
-#      run : |
-#        ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}
-    - name: COPY FILES TO EC2 INSTANCE
-      uses: appleboy/scp-action@v0.1.7
-      with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 22
-        source: "dist/portfolio/browser/*.js"
-        target: "/var/www/html"
+        aws s3 sync dist/portfolio/browser s3://taylorray.dev --delete
 
