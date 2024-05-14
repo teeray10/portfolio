@@ -1,29 +1,12 @@
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
-<p>skills!</p>
+<section class="flex flex-col gap-5">
+  @for (category of skills; track category) {
+    <div class=" transition-all duration-300 rounded-2xl">
+      <h3 class="text-2xl pb-2">{{ category.heading }}</h3>
+      <div class="flex flex-wrap gap-2 text-secondary">
+        @for (skill of category.skills; track skill) {
+          <span class="bg-blue rounded-full p-2">{{ skill }}</span>
+        }
+      </div>
+    </div>
+  }
+</section>
