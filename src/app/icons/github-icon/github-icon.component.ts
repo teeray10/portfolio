@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'tr-github-icon',
   standalone: true,
   imports: [],
-  templateUrl: './github-icon.component.html',
-  styleUrl: './github-icon.component.scss'
+  templateUrl: './github-icon.component.html'
 })
 export class GithubIconComponent {
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'tr-projects',
@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {
-
-  ngOnInit() {
-    console.log('ngOnInit => projects.component.ts');
-  }
-
 }

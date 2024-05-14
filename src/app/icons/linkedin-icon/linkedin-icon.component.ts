@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './linkedin-icon.component.html',
-  styleUrl: './linkedin-icon.component.scss'
 })
 export class LinkedinIconComponent {
 

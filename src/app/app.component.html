@@ -1,19 +1,24 @@
-<section class="grid lg:grid-cols-2 gap-10">
-    <tr-sidebar />
-    <main class="flex flex-col gap-10">
-      <tr-about id="about" class="lg:pt-40"/>
-      <tr-skills id="skills" class="lg:pt-40"/>
+<section class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-10">
+  <tr-sidebar />
+  <main class="flex flex-col gap-10 pt-10 lg:py-40">
+    <tr-about id="about" aria-label="about" IsVisible/>
+    <tr-skills id="skills" aria-label="skills" IsVisible/>
 
-      @defer (on viewport) {
-        <tr-experience id="experience" class="lg:pt-40"/>
-      } @placeholder {
-        <section id="experience">Experience</section>
-      }
+<!--      @defer (on viewport) {-->
+      <tr-experience id="experience" aria-label="experience" IsVisible/>
+<!--      } @placeholder {-->
+<!--        <section id="experience">Experience</section>-->
+<!--      }-->
 
-      @defer (on viewport) {
-        <tr-projects id="projects" class="lg:pt-40"/>
-      } @placeholder {
-        <section id="projects">Projects</section>
-      }
-    </main>
+<!--      @defer (on viewport) {-->
+      <tr-projects id="projects" aria-label="projects" IsVisible/>
+<!--      } @placeholder {-->
+<!--        <section id="projects">Projects</section>-->
+<!--      }-->
+  </main>
 </section>
+@if (userHasScrolled) {
+  <a href="#top" class="fixed bottom-5 right-5 w-10 h-10 text-primary border border-secondary rounded-lg p-1 lg:hidden">
+    <tr-arrow-up-icon />
+  </a>
+}
