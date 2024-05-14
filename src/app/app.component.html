@@ -1,9 +1,19 @@
-<section class="grid grid-cols-2 gap-10">
+<section class="grid lg:grid-cols-2 gap-10">
     <tr-sidebar />
-    <main class="flex flex-col">
-        <tr-about id="about" class="pt-40"/>
-        <tr-skills id="skills" class="pt-40"/>
-        <tr-experience id="experience" class="pt-40"/>
-        <tr-projects id="projects" class="pt-40"/>
+    <main class="flex flex-col gap-10">
+      <tr-about id="about" class="lg:pt-40"/>
+      <tr-skills id="skills" class="lg:pt-40"/>
+
+      @defer (on viewport) {
+        <tr-experience id="experience" class="lg:pt-40"/>
+      } @placeholder {
+        <section id="experience">Experience</section>
+      }
+
+      @defer (on viewport) {
+        <tr-projects id="projects" class="lg:pt-40"/>
+      } @placeholder {
+        <section id="projects">Projects</section>
+      }
     </main>
 </section>
