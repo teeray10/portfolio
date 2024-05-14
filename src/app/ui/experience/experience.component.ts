@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {differenceInCalendarMonths, differenceInCalendarYears, differenceInMonths, formatDuration, intervalToDuration} from 'date-fns';
+import {formatDuration, intervalToDuration} from 'date-fns';
 
 @Component({
   selector: 'tr-experience',

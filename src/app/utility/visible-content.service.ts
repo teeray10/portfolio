@@ -1,13 +1,15 @@
-import {Injectable, signal} from '@angular/core';
+import {Injectable, signal, WritableSignal} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VisibleContentService {
   content = ['about', 'skills', 'experience', 'projects'];
-  visibleContent$ = signal(this.content[0]);
+  visibleContent$: WritableSignal<string> = signal(this.content[0]);
 
-  setVisibleContent(value: string): void {
-    this.visibleContent$.set(value);
+  setVisibleContent(value: string | null): void {
+    if (value) {
+      this.visibleContent$.set(value);
+    }
   }
 }
