@@ -16,14 +16,14 @@ import {ArrowUpIconComponent} from '@icons/arrow-up-icon/arrow-up-icon.component
   templateUrl: './app.component.html',
 })
 export class AppComponent implements AfterViewChecked {
+  protected userHasScrolled = false;
+  private visibleContentService = inject(VisibleContentService);
+  private route = inject(ActivatedRoute);
+
   @HostListener('window:scroll', [])
   onScroll(): void {
     this.userHasScrolled = window.scrollY > 100;
   }
-
-  private visibleContentService = inject(VisibleContentService);
-  private route = inject(ActivatedRoute);
-  protected userHasScrolled = false;
 
   ngAfterViewChecked(): void {
     this.visibleContentService.setVisibleContent(this.route.snapshot.fragment);

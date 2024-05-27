@@ -1,0 +1,21 @@
+<div class="form-group">
+  <input #myInput (change)="onFileChange($event)" name="fileUpload" type="file"/>
+  <button (click)="uploadFile()" class="btn btn-primary">Upload File</button>
+</div>
+
+@if (uploadSuccess) {
+  <p class="text-green-400">Successfully uploaded!</p>
+
+  <button class="border border-white" (click)="transcribe()">Transcribe</button>
+
+  <!--  <p>-->
+          <!--    {{ transcribedText }}-->
+          <!--  </p>-->
+}
+
+@if (transcribeInProgress) {
+  <p>Transcription request successfully sent!</p>
+
+  Current status:
+}
+

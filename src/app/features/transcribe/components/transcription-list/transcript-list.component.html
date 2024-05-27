@@ -1,0 +1,27 @@
+<section class="min-w-[50vw] max-h-screen overflow-scroll py-10">
+  <!--  @if (loading()) {-->
+  <!--    Loading...-->
+  <!--  }-->
+
+  <!--  @if (!loading()) {-->
+  @for (transcription of transcriptList(); track transcription.id) {
+    <div class="border border-blue p-5 flex justify-between">
+      <div class="w-full">
+        <!--        <p>id: {{ transcription.id }}</p>-->
+        <p class="max-w-[800px] w-full overflow-hidden text-nowrap">Audio File: {{ transcription.audio_url.replace('https://udemy-23623.s3.af-south-1.amazonaws.com/', '') }}</p>
+        <p>Status: <span [class.text-green-400]="transcription.status === 'completed'" [class.text-red-400]="transcription.status === 'error'">{{ transcription.status }}</span></p>
+      </div>
+      <div class="flex flex-col gap-5">
+        <div class="h-5 w-5 cursor-pointer">
+          <tr-refresh-icon (onRefresh)="refreshTranscript(transcription.id)"/>
+        </div>
+
+        @if (transcription.status === 'completed') {
+          <div class="h-5 w-5 cursor-pointer">
+            <tr-download-icon (onDownload)="downloadTranscript(transcription.id)"/>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</section>

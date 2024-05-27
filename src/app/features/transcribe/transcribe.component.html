@@ -1,0 +1,20 @@
+<section class="flex">
+  <nav class="basis-1/4 h-screen">
+    <ul class="h-full flex flex-col justify-center gap-5 text-2xl">
+      <li (click)="view = 'list'" [class.text-secondary]="view === 'list'" class="cursor-pointer">
+        All Transcripts
+      </li>
+      <li (click)="view = 'new'" [class.text-secondary]="view === 'new'" class="cursor-pointer">
+        New Transcript
+      </li>
+    </ul>
+  </nav>
+  <section class="flex justify-center items-center basis-3/4">
+    @if (view === 'list') {
+      <tr-transcription-list/>
+    }
+    @if (view === 'new') {
+      <tr-new-transcript/>
+    }
+  </section>
+</section>
