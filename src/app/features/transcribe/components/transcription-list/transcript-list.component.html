@@ -4,24 +4,31 @@
   <!--  }-->
 
   <!--  @if (!loading()) {-->
-  @for (transcription of transcriptList(); track transcription.id) {
-    <div class="border border-blue p-5 flex justify-between tooltip-accent" data-tip="Download transcript">
-      <div class="w-full">
-        <!--        <p>id: {{ transcription.id }}</p>-->
-        <p class="max-w-[800px] w-full overflow-hidden text-nowrap">Audio File: {{ transcription.audio_url.replace('https://udemy-23623.s3.af-south-1.amazonaws.com/', '') }}</p>
-        <p>Status: <span [class.text-green-400]="transcription.status === 'completed'" [class.text-red-400]="transcription.status === 'error'">{{ transcription.status }}</span></p>
+  @for (transcript of transcriptList(); track transcript.id) {
+    <div class="border border-blue p-5 flex flex-col md:flex-row tooltip-accent" data-tip="Download transcript">
+      <div class="min-w-[300px] 2xl:w-[600px] 2xl:max-w-[600px] 2xl:min-w-[600px] pr-5">
+        <p class="w-full overflow-hidden text-nowrap">Audio File: {{ transcript.audio_url.replace('https://udemy-23623.s3.af-south-1.amazonaws.com/', '') }}</p>
+        <p>Status: <span [class.text-green-400]="transcript.status === 'completed'" [class.text-red-400]="transcript.status === 'error'">{{ transcript.status }}</span></p>
       </div>
-      <div class="flex items-center gap-3">
-        <div class="h-5 w-5 cursor-pointer hover:text-tertiary">
-          <tr-refresh-icon (onRefresh)="refreshTranscript(transcription.id)"/>
+      <div class="flex justify-between grow">
+        <div class="w-full flex items-center">
+          <p class="max-w-[800px] w-full overflow-hidden text-nowrap">Date: {{ transcript.created | date : 'EE, dd MMM yyy HH:mm' : 'GMT+4' }}</p>
+          <!--        <p class="max-w-[800px] w-full overflow-hidden text-nowrap">Date Completed: <span class="text-white font-bold">{{ transcript.completed | date : 'EE, dd MMM yyy HH:mm' }}</span></p>-->
         </div>
-        @if (transcription.status === 'completed') {
-          <div class="h-5 w-5 cursor-pointer tooltip hover:text-tertiary" data-tip="Download transcript">
-            <tr-download-icon (onDownload)="downloadTranscript(transcription.id)"/>
-          </div>
-        }
-        <div class="h-5 w-5 cursor-pointer tooltip hover:text-tertiary" data-tip="Delete transcript">
-          <tr-delete-icon (onDelete)="deleteTranscript(transcription.id)"/>
+        <div class="flex items-center gap-3">
+          @if (transcript.status !== 'completed') {
+            <div class="h-7 w-7 cursor-pointer hover:text-tertiary">
+              <tr-refresh-icon (onRefresh)="refreshTranscript(transcript.id)"/>
+            </div>
+          }
+          @if (transcript.status === 'completed') {
+            <div class="h-7 w-7 cursor-pointer tooltip hover:text-tertiary" data-tip="Download transcript">
+              <tr-download-icon (onDownload)="downloadTranscript(transcript.id)"/>
+            </div>
+          }
+          <!--        <div class="h-5 w-5 cursor-pointer tooltip hover:text-tertiary" data-tip="Delete transcript">-->
+          <!--          <tr-delete-icon (onDelete)="deleteTranscript(transcription.id)"/>-->
+          <!--        </div>-->
         </div>
       </div>
     </div>

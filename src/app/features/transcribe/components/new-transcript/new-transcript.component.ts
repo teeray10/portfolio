@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, EventEmitter, inject, Output} from '@angular/core';
 import {TranscribeService} from 'src/app/features/transcribe/transcribe.service';
 import {PutObjectCommand, PutObjectCommandInput, S3Client} from '@aws-sdk/client-s3';
 import {fromCognitoIdentityPool} from '@aws-sdk/credential-providers';
@@ -10,13 +10,15 @@ import {fromCognitoIdentityPool} from '@aws-sdk/credential-providers';
   templateUrl: './new-transcript.component.html'
 })
 export class NewTranscriptComponent {
+  @Output() onViewChange = new EventEmitter<'list' | 'new'>();
   transcribeService = inject(TranscribeService);
   transcribeInProgress = false;
   region = 'af-south-1';
   bucket = 'udemy-23623';
+  uploadInProgress = false;
   uploadSuccess = false;
   uploadedFileUrl = '';
-  file!: File;
+  file!: File | null;
 
   s3Client = new S3Client({
     region: this.region,
@@ -33,6 +35,9 @@ export class NewTranscriptComponent {
   }
 
   async uploadFile() {
+
+    if (!this.file) return;
+    this.uploadInProgress = true;
     this.resetUpload();
 
     const input: PutObjectCommandInput = {
@@ -48,11 +53,18 @@ export class NewTranscriptComponent {
       this.uploadedFileUrl = `https://${this.bucket}.s3.${this.region}.amazonaws.com/${this.file.name}`;
       this.uploadSuccess = true;
     }
+    this.uploadInProgress = false;
   }
 
   transcribe(): void {
+    this.uploadSuccess = false;
+    this.file = null;
     this.transcribeInProgress = true;
     const transcript = this.transcribeService.transcribe(this.uploadedFileUrl);
+
+    setTimeout(() => {
+      this.onViewChange.emit('list');
+    }, 5000)
   }
 
   private resetUpload(): void {

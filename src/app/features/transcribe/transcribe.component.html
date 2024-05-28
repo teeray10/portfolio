@@ -14,7 +14,7 @@
       <tr-transcription-list/>
     }
     @if (view === 'new') {
-      <tr-new-transcript/>
+      <tr-new-transcript (onViewChange)="view = $event"/>
     }
   </section>
 </section>

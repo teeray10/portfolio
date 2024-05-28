@@ -1,21 +1,33 @@
-<div class="form-group">
-  <input #myInput (change)="onFileChange($event)" name="fileUpload" type="file"/>
-  <button (click)="uploadFile()" class="btn btn-primary">Upload File</button>
-</div>
+<section class="flex flex-col gap-10 justify-center items-center h-[calc(100vh-128px)]">
+  @if (file) {
+    Selected file: {{ file.name }}
+  } @else {
+    Please choose a file using the button below.
+  }
 
-@if (uploadSuccess) {
-  <p class="text-green-400">Successfully uploaded!</p>
+  <div class="flex gap-5">
+    <input (change)="onFileChange($event)" class="hidden" id="upload" type="file"/>
+    <label class="border border-primary p-3 rounded-full hover:bg-blue cursor-pointer" for="upload">Choose File</label>
+    @if (file) {
+      <button (click)="uploadFile()" class="border border-primary p-3 rounded-full hover:bg-blue">Upload File</button>
+    }
+  </div>
 
-  <button class="border border-white" (click)="transcribe()">Transcribe</button>
+  @if (uploadInProgress) {
+    Uploading file. Please wait...
+  }
 
-  <!--  <p>-->
-          <!--    {{ transcribedText }}-->
-          <!--  </p>-->
-}
+  @if (uploadSuccess) {
+    <p class="text-green-400">Successfully uploaded!</p>
 
-@if (transcribeInProgress) {
-  <p>Transcription request successfully sent!</p>
+    <button class="border border-primary p-3 rounded-full hover:bg-blue" (click)="transcribe()">Transcribe file</button>
 
-  Current status:
-}
+    <!--  <p>-->
+            <!--    {{ transcribedText }}-->
+            <!--  </p>-->
+  }
 
+  @if (transcribeInProgress) {
+    <p>Transcription request successfully sent! In a short while you will be taken back to the main list...</p>
+  }
+</section>
