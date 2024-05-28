@@ -1,6 +1,6 @@
-<section class="flex">
-  <nav class="basis-1/4 h-screen">
-    <ul class="h-full flex flex-col justify-center gap-5 text-2xl">
+<section class="flex flex-col items-center max-h-screen w-full min-w-full">
+  <nav class="h-32 min-h-32 flex justify-center items-center">
+    <ul class="flex justify-center gap-5 text-2xl">
       <li (click)="view = 'list'" [class.text-secondary]="view === 'list'" class="cursor-pointer">
         All Transcripts
       </li>
@@ -9,7 +9,7 @@
       </li>
     </ul>
   </nav>
-  <section class="flex justify-center items-center basis-3/4">
+  <section class="w-full min-w-full">
     @if (view === 'list') {
       <tr-transcription-list/>
     }

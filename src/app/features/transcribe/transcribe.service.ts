@@ -51,6 +51,13 @@ export class TranscribeService {
     })
   }
 
+  deleteTranscript(id: string): void {
+    this.client.transcripts.delete(id).then(transcript => {
+      console.log('transcript => transcribe.service.ts', transcript);
+      // this.transcriptList.update(tl => tl.map(t => t.id === transcript.id ? {...t, ...transcript} : t));
+    })
+  }
+
   getTranscriptList(): WritableSignal<TranscriptListItem[]> {
     return this.transcriptList;
   }
