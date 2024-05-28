@@ -1,4 +1,4 @@
-<section class="flex flex-col gap-10 justify-center items-center h-[calc(100vh-128px)]">
+<section class="flex flex-col gap-10 justify-center items-center h-[calc(100vh-128px)] text-center">
   @if (file) {
     Selected file:<span class="text-secondary">{{ file.name }}</span>
   } @else {
@@ -7,9 +7,9 @@
 
   <div class="flex gap-5">
     <input (change)="onFileChange($event)" accept="audio/*" class="hidden" id="upload" type="file"/>
-    <label class="border border-primary p-3 rounded-full hover:bg-blue cursor-pointer" for="upload">Choose File</label>
+    <label class="border border-primary p-3 rounded-full hover:bg-blue cursor-pointer text-nowrap" for="upload">Choose File</label>
     @if (file) {
-      <button (click)="uploadFile()" class="border border-primary p-3 rounded-full hover:bg-blue">Transcribe File</button>
+      <button (click)="uploadFile()" class="border border-primary p-3 rounded-full hover:bg-blue text-nowrap">Transcribe File</button>
     }
   </div>
 
