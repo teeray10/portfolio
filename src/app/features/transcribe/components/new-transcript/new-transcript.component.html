@@ -1,6 +1,6 @@
 <section class="flex flex-col gap-10 justify-center items-center h-[calc(100vh-128px)]">
   @if (file) {
-    Selected file: {{ file.name }}
+    Selected file:<span class="text-secondary">{{ file.name }}</span>
   } @else {
     Please choose a file using the button below.
   }
@@ -9,7 +9,7 @@
     <input (change)="onFileChange($event)" class="hidden" id="upload" type="file"/>
     <label class="border border-primary p-3 rounded-full hover:bg-blue cursor-pointer" for="upload">Choose File</label>
     @if (file) {
-      <button (click)="uploadFile()" class="border border-primary p-3 rounded-full hover:bg-blue">Upload File</button>
+      <button (click)="uploadFile()" class="border border-primary p-3 rounded-full hover:bg-blue">Transcribe File</button>
     }
   </div>
 
@@ -20,9 +20,9 @@
   @if (uploadSuccess) {
     <p class="text-green-400">Successfully uploaded!</p>
 
-    <button class="border border-primary p-3 rounded-full hover:bg-blue" (click)="transcribe()">Transcribe file</button>
+    <!--    <button class="border border-primary p-3 rounded-full hover:bg-blue" (click)="transcribe()">Transcribe file</button>-->
 
-    <!--  <p>-->
+            <!--  <p>-->
             <!--    {{ transcribedText }}-->
             <!--  </p>-->
   }

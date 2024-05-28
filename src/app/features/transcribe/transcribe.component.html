@@ -1,11 +1,11 @@
-<section class="flex flex-col items-center max-h-screen w-full min-w-full">
+<section class="flex flex-col items-center max-h-screen w-full min-w-full text-lg">
   <nav class="h-32 min-h-32 flex justify-center items-center">
-    <ul class="flex justify-center gap-5 text-2xl">
+    <ul class="flex justify-center gap-5 text-xl font-light">
       <li (click)="view = 'list'" [class.text-secondary]="view === 'list'" class="cursor-pointer">
-        All Transcripts
+        ALL TRANSCRIPTS
       </li>
       <li (click)="view = 'new'" [class.text-secondary]="view === 'new'" class="cursor-pointer">
-        New Transcript
+        NEW TRANSCRIPT
       </li>
     </ul>
   </nav>

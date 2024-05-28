@@ -1,7 +1,11 @@
 <section class="overflow-scroll h-[calc(100vh-128px)]">
-  <!--  @if (loading()) {-->
-  <!--    Loading...-->
-  <!--  }-->
+  @if (transcriptList()?.length === 0) {
+    <div class="flex items-center justify-center h-full">
+      No transcripts found! Start a new transcript by clicking the
+      <span class="text-secondary">&nbsp;NEW TRANSCRIPT&nbsp;</span>
+      tab above.
+    </div>
+  }
 
   <!--  @if (!loading()) {-->
   @for (transcript of transcriptList(); track transcript.id) {

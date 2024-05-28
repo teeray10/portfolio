@@ -29,6 +29,7 @@ export class NewTranscriptComponent {
   });
 
   onFileChange(event: any) {
+    this.resetUpload();
     if (event.target.files.length > 0) {
       this.file = event.target.files[0];
     }
@@ -37,8 +38,8 @@ export class NewTranscriptComponent {
   async uploadFile() {
 
     if (!this.file) return;
-    this.uploadInProgress = true;
     this.resetUpload();
+    this.uploadInProgress = true;
 
     const input: PutObjectCommandInput = {
       Bucket: this.bucket,
@@ -52,24 +53,21 @@ export class NewTranscriptComponent {
     if (data.$metadata.httpStatusCode! >= 200 && data.$metadata.httpStatusCode! < 300) {
       this.uploadedFileUrl = `https://${this.bucket}.s3.${this.region}.amazonaws.com/${this.file.name}`;
       this.uploadSuccess = true;
+      this.transcribeInProgress = true;
+      this.file = null;
+      const transcript = this.transcribeService.transcribe(this.uploadedFileUrl);
+
+      setTimeout(() => {
+        this.onViewChange.emit('list');
+      }, 5000)
     }
-    this.uploadInProgress = false;
-  }
-
-  transcribe(): void {
-    this.uploadSuccess = false;
-    this.file = null;
-    this.transcribeInProgress = true;
-    const transcript = this.transcribeService.transcribe(this.uploadedFileUrl);
-
-    setTimeout(() => {
-      this.onViewChange.emit('list');
-    }, 5000)
   }
 
   private resetUpload(): void {
     this.uploadedFileUrl = '';
     this.uploadSuccess = false;
+    this.uploadInProgress = false;
+    this.transcribeInProgress = false;
   }
 
 }
