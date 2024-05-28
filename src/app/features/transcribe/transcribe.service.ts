@@ -14,7 +14,10 @@ export class TranscribeService {
   private paragraphsList = signal<string[]>([]);
 
   getTranscriptions(): void {
-    this.client.transcripts.list().then(tl => this.transcriptList.set(tl.transcripts.filter(t => t.audio_url !== 'http://deleted_by_user')));
+    this.client.transcripts.list().then(tl => {
+      this.transcriptList.set(tl.transcripts.filter(t => t.audio_url !== 'http://deleted_by_user'));
+      this.setLoading(false);
+    });
   }
 
   transcribe(audioUrl: string): Promise<any> {
