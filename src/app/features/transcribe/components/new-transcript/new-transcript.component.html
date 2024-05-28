@@ -6,7 +6,7 @@
   }
 
   <div class="flex gap-5">
-    <input (change)="onFileChange($event)" class="hidden" id="upload" type="file"/>
+    <input (change)="onFileChange($event)" accept="audio/*" class="hidden" id="upload" type="file"/>
     <label class="border border-primary p-3 rounded-full hover:bg-blue cursor-pointer" for="upload">Choose File</label>
     @if (file) {
       <button (click)="uploadFile()" class="border border-primary p-3 rounded-full hover:bg-blue">Transcribe File</button>
