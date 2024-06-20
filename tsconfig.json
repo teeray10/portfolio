@@ -24,8 +24,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@ui/*": ["./src/app/ui/*"],
-      "@icons/*": ["./src/app/icons/*"],
+      "@home/*": [
+        "./src/app/features/home/*"
+      ]
     }
   },
   "angularCompilerOptions": {

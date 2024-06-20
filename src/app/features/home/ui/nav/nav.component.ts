@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {VisibleContentService} from 'src/app/utility/visible-content.service';
+import {VisibleContentService} from '@home/utility/visible-content.service';
 
 @Component({
   selector: 'tr-nav',

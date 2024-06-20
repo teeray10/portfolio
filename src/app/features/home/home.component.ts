@@ -1,12 +1,12 @@
 import {AfterViewChecked, Component, HostListener, inject} from '@angular/core';
-import {AboutComponent} from '@ui/about/about.component';
-import {ArrowUpIconComponent} from '@icons/arrow-up-icon/arrow-up-icon.component';
-import {ExperienceComponent} from '@ui/experience/experience.component';
+import {AboutComponent} from '@home/ui/about/about.component';
+import {ArrowUpIconComponent} from '@home/icons/arrow-up-icon/arrow-up-icon.component';
+import {ExperienceComponent} from '@home/ui/experience/experience.component';
 import {IsVisibleDirective} from 'src/app/directives/is-visible.directive';
-import {ProjectsComponent} from '@ui/projects/projects.component';
-import {SidebarComponent} from '@ui/sidebar/sidebar.component';
-import {SkillsComponent} from '@ui/skills/skills.component';
-import {VisibleContentService} from 'src/app/utility/visible-content.service';
+import {ProjectsComponent} from '@home/ui/projects/projects.component';
+import {SidebarComponent} from '@home/ui/sidebar/sidebar.component';
+import {SkillsComponent} from '@home/ui/skills/skills.component';
+import {VisibleContentService} from '@home/utility/visible-content.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
