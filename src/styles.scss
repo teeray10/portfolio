@@ -9,6 +9,7 @@
   --tertiary: #45a29e;
   --accent: #ffd23c;
   --dark-blue: #0d303b;
+  --dark-blue-variant: #0a262e;
   --blue: #124e66;
   --dark: #0b0c10;
   --grey: #1f2833;
@@ -30,6 +31,6 @@ html, body {
   height: 100%;
 }
 
-*, {
+* {
   box-sizing: border-box;
 }

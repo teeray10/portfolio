@@ -16,6 +16,7 @@ module.exports = {
         light_grey: "var(--light-grey)",
         blue: "var(--blue)",
         dark_blue: "var(--dark-blue)",
+        dark_blue_variant: "var(--dark-blue-variant)",
       },
     },
   },

@@ -1,1 +1,18 @@
-<p>Projects coming soon!</p>
+<section class="flex flex-col gap-16">
+  @for (project of projects; track project) {
+    <a class="group relative" [href]="project.url">
+      <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition border-white/5
+                  lg:-inset-x-6 lg:block lg:group-hover:bg-slate-500/10 lg:group-hover:border-t lg:group-hover:drop-shadow-lg">
+      </div>
+      <div class="relative flex gap-10 items-center">
+        <div class="relative min-w-60 max-w-60 min-h-32 max-h-32">
+          <img [ngSrc]="project.imageUrl" fill class="border-slate-600 border-2 rounded-md"/>
+        </div>
+        <div>
+          <p class="text-white text-lg mb-2">{{ project.title }}</p>
+          <p class="text-sm">{{ project.description }}</p>
+        </div>
+      </div>
+    </a>
+  }
+</section>

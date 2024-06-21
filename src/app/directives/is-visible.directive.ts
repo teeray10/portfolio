@@ -1,5 +1,5 @@
-import {AfterViewInit, Directive, ElementRef, inject} from '@angular/core';
-import {VisibleContentService} from 'src/app/features/home/utility/visible-content.service';
+import { AfterViewInit, Directive, ElementRef, inject } from '@angular/core';
+import { VisibleContentService } from 'src/app/features/home/utility/visible-content.service';
 
 @Directive({
   selector: '[IsVisible]',
@@ -15,7 +15,7 @@ export class IsVisibleDirective implements AfterViewInit {
       if (entry.isIntersecting) {
         this.visibleContentService.setVisibleContent(entry.target.ariaLabel)
       }
-    }, {threshold: 1.0})
+    }, {threshold: 0.5})
     observer.observe(observedElement);
   }
 }
