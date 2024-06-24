@@ -18,7 +18,7 @@ export class ProjectsComponent {
     {
       title: 'Audio Transcription App',
       url: '',
-      description: 'A simple app that I built because of a need that my family and I had - transcribing audio files quickly and effortlessly. It uses Assembly AI for the transcription and an S3 Bucket for storage',
+      description: 'A simple app that I built because of a need that my family and I had - transcribing audio files quickly and effortlessly. I use Assembly AI for the transcription and an AWS S3 Bucket for storage',
       imageUrl: 'assets/transcribe.png'
     }
   ]
