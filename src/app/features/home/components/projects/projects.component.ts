@@ -1,10 +1,11 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
+import { SectionHeadingComponent } from '@home/shared/ui/section-heading/section-heading.component';
 
 @Component({
   selector: 'tr-projects',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, SectionHeadingComponent],
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {

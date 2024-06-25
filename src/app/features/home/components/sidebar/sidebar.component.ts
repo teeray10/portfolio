@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {SocialComponent} from '@home/ui/social/social.component';
-import {NavComponent} from '@home/ui/nav/nav.component';
+import { Component } from '@angular/core';
+import { NavComponent } from '@home/components/nav/nav.component';
+import { SocialComponent } from '@home/components/social/social.component';
 
 @Component({
   selector: 'tr-sidebar',

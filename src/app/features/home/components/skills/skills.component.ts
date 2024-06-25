@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { SectionHeadingComponent } from '@home/shared/ui/section-heading/section-heading.component';
 
 @Component({
   selector: 'tr-skills',
   standalone: true,
-  imports: [],
+  imports: [SectionHeadingComponent],
   templateUrl: './skills.component.html',
 })
 export class SkillsComponent {

@@ -1,12 +1,13 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {formatDuration, intervalToDuration} from 'date-fns';
-import {NewTabIconComponent} from '@home/icons/new-tab-icon/new-tab-icon.component';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { NewTabIconComponent } from '@home/icons/new-tab-icon/new-tab-icon.component';
+import { SectionHeadingComponent } from '@home/shared/ui/section-heading/section-heading.component';
+import { formatDuration, intervalToDuration } from 'date-fns';
 
 @Component({
   selector: 'tr-experience',
   standalone: true,
-  imports: [CommonModule, NewTabIconComponent],
+  imports: [CommonModule, NewTabIconComponent, SectionHeadingComponent],
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent {
