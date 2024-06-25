@@ -6,12 +6,15 @@
                   lg:-inset-x-6 lg:block lg:group-hover:bg-slate-500/10 lg:group-hover:border-t lg:group-hover:drop-shadow-lg">
       </div>
       <div class="relative flex gap-10 items-center">
-        <div class="relative min-w-60 max-w-60 min-h-32 max-h-32">
+        <div class="hidden relative min-w-60 max-w-60 min-h-32 max-h-32 md:block">
           <img [ngSrc]="project.imageUrl" fill class="border-slate-600 border-2 rounded-md"/>
         </div>
         <div>
           <p class="text-white text-lg mb-2">{{ project.title }}</p>
           <p class="text-sm">{{ project.description }}</p>
+          <div class="relative mt-5 min-w-60 max-w-60 min-h-32 max-h-32 md:hidden">
+            <img [ngSrc]="project.imageUrl" fill class="border-slate-600 border-2 rounded-md"/>
+          </div>
         </div>
       </div>
     </a>
