@@ -1,6 +1,6 @@
-<section class="flex flex-col lg:grid lg:grid-cols-2 px-5 md:mx-10 lg:mx-20 2xl:mx-80 2xl:px-20 pb-20">
+<section class="flex flex-col lg:grid lg:grid-cols-2 px-5 sm:mx-10 lg:mx-20 xl:px-10 xl:mx-40 2xl:mx-80 2xl:pl-20">
   <tr-sidebar/>
-  <main class="flex flex-col gap-20 pt-10 lg:py-40">
+  <main class="flex flex-col gap-20 lg:py-32">
     <tr-about IsVisible aria-label="about" id="about"/>
     <tr-experience IsVisible aria-label="experience" id="experience"/>
 
@@ -11,14 +11,14 @@
     <!--      }-->
 
     <!--      @defer (on viewport) {-->
-    <tr-projects IsVisible aria-label="projects" id="projects"/>
+    <!-- <tr-projects IsVisible aria-label="projects" id="projects"/> -->
     <!--      } @placeholder {-->
     <!--        <section id="projects">Projects</section>-->
     <!--      }-->
   </main>
 </section>
 @if (userHasScrolled) {
-  <a href="#top" class="fixed bottom-5 right-5 w-10 h-10 text-primary border border-secondary rounded-lg p-1 lg:hidden">
+  <a href="#top" class="fixed bottom-5 right-5 w-10 h-10 text-primary border-secondary rounded-lg p-1 lg:hidden">
     <tr-arrow-up-icon/>
   </a>
 }
