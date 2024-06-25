@@ -16,16 +16,25 @@ import { VisibleContentService } from 'src/app/features/home/utility/visible-con
   templateUrl: './app.component.html',
 })
 export class AppComponent implements AfterViewChecked {
-  protected userHasScrolled = false;
   private visibleContentService = inject(VisibleContentService);
   private route = inject(ActivatedRoute);
 
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-    this.userHasScrolled = window.scrollY > 100;
+  mouseX = 0;
+  mouseY = 0;
+  background = 'background: radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%)';
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e: any) {
+    this.mouseX = e.pageX;
+    this.mouseY = e.pageY;
+    this.background = `background: radial-gradient(600px at ${e.pageX}px ${e.pageY}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
   }
 
   ngAfterViewChecked(): void {
     this.visibleContentService.setVisibleContent(this.route.snapshot.fragment);
+  }
+
+  mouseBg(): string {    
+    return `radial-gradient(800px at ${this.mouseX}px ${this.mouseY}px, rgba(17, 80, 98, 0.15), transparent 80%)`;
   }
 }

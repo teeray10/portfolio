@@ -1,1 +1,4 @@
-<router-outlet/>
+<div class="relative">
+    <router-outlet/>
+    <div class="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute" #mousecircle [style.background]="mouseBg()"></div>
+</div>

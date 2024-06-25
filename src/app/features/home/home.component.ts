@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, HostListener, inject } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, HostListener, inject, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AboutComponent } from '@home/components/about/about.component';
 import { ExperienceComponent } from '@home/components/experience/experience.component';
@@ -24,9 +24,13 @@ import { IsVisibleDirective } from 'src/app/directives/is-visible.directive';
   templateUrl: './home.component.html'
 })
 export class HomeComponent implements AfterViewChecked {
-  protected userHasScrolled = false;
+  @ViewChild('mousecircle')
+  mouse!: ElementRef;
+
   private visibleContentService = inject(VisibleContentService);
   private route = inject(ActivatedRoute);
+  
+  userHasScrolled = false;
 
   @HostListener('window:scroll', [])
   onScroll(): void {
