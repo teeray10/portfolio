@@ -1,12 +1,13 @@
 <tr-section-heading>Projects</tr-section-heading>
 <section class="flex flex-col gap-16">
   @for (project of projects; track project) {
-    <a class="group relative" [href]="project.url">
+    <!-- <a class="group relative" [href]="project.url"> -->
+    <div class="group relative">
       <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition border-white/5
                   lg:-inset-x-6 lg:block lg:group-hover:bg-slate-500/10 lg:group-hover:border-t lg:group-hover:drop-shadow-lg">
       </div>
       <div class="relative flex gap-10 items-center">
-        <div class="hidden relative min-w-60 max-w-60 min-h-32 max-h-32 md:block">
+        <div class="hidden relative min-w-60 max-w-60 min-h-32 max-h-32 lg:block">
           <img [ngSrc]="project.imageUrl" fill class="border-slate-600 border-2 rounded-md"/>
         </div>
         <div>
@@ -17,6 +18,7 @@
           </div>
         </div>
       </div>
-    </a>
+    </div>
+    <!-- </a> -->
   }
 </section>
