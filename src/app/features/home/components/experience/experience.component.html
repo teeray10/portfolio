@@ -1,29 +1,27 @@
 <tr-section-heading>Experience</tr-section-heading>
 <section class="text-light_grey flex flex-col gap-16 font-light lg:font-normal">
   @for (job of jobs; track job) {
-    <a class="group relative" [href]="job.employer.url" target="_blank">
-      <div class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition border-white/5
-                  lg:-inset-x-6 lg:block lg:group-hover:bg-slate-500/10 lg:group-hover:border-t lg:group-hover:drop-shadow-lg">
-      </div>
+    <div class="group relative">
+      <a class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition border-white/5
+                  lg:-inset-x-6 lg:block lg:group-hover:bg-slate-500/10 lg:group-hover:border-t lg:group-hover:drop-shadow-lg"
+          [href]="job.employer.url" target="_blank">
+      </a>
       <div class="flex flex-col md:flex-row md:gap-10">
         <div class="flex gap-2 items-center md:items-start md:w-1/4">
-          <h3 class="sm:hidden text-white text-nowrap font-semibold">{{ job.employer.name.toUpperCase() }}
+          <a class="md:hidden text-white text-nowrap font-semibold" [href]="job.employer.url" target="_blank">
+            {{ job.employer.name.toUpperCase() }}
             <i class="inline-block lg:hidden group-hover:inline-block mt-1 lg:ml-2 h-3 w-3"><tr-new-tab-icon/></i>
-          </h3>
+          </a>
           <p class="text-xs font-normal lg:font-medium sm:mt-1 text-nowrap">{{ job.timeline.text }}</p>
-          <!--          <p class="font-medium my-1 uppercase">{{ job.employer.type }}</p>-->
           <!--          <p class="text-xs">{{ getDuration(job.timeline.startDate, job.timeline.endDate) }} </p>-->
-          <!--          <p class="text-sm mt-1">{{ job.employer.description }}</p>-->
         </div>
         <div class="flex-1">
           <div class="leading-snug pb-2 sm:py-2 md:pt-0 font-normal">
-            <h3 class="hidden sm:inline text-white text-nowrap">{{ job.title }} · {{ job.employer.name.toUpperCase() }}
-              <i class="inline-block lg:hidden group-hover:inline-block mt-1 lg:ml-2 h-3 w-3"><tr-new-tab-icon/></i>
-            </h3>
-            <!-- <h3 class="sm:hidden text-white text-nowrap font-normal">{{ job.employer.name.toUpperCase() }}
-              <i class="inline-block lg:hidden group-hover:inline-block mt-1 lg:ml-2 h-3 w-3"><tr-new-tab-icon/></i>
-            </h3> -->
-            <h3 class="sm:hidden text-white text-nowrap">{{ job.title }}</h3>
+            <a class="hidden md:inline text-white text-nowrap font-semibold hover:text-secondary lg:group-hover:text-secondary tracking-wide" [href]="job.employer.url" target="_blank">
+              {{ job.title }} · {{ job.employer.name.toUpperCase() }}
+              <i class="inline-block group-hover:inline-block w-3 lg:hidden lg:ml-1"><tr-arrow-right-icon /></i>
+            </a>
+            <h3 class="md:hidden text-white text-nowrap">{{ job.title }}</h3>
 
             @for (subtitle of job.subTitles; track subtitle) {
               <h4 class="text-primary">{{ subtitle }}</h4>
@@ -41,7 +39,7 @@
           </div>
         </div>
       </div>
-    </a>
+    </div>
   }
   <!--      <span>{{ getDuration(experience[0].startDate, experience[0].endDate) }}</span>-->
 </section>

@@ -21,7 +21,7 @@ export class AppComponent implements AfterViewChecked {
 
   mouseX = 0;
   mouseY = 0;
-  background = 'transparent';
+  background = 'radial-gradient(800px at center, rgba(78, 147, 165, 0.2), transparent 80%)';
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: any) {
