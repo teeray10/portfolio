@@ -48,7 +48,7 @@ export class ExperienceComponent {
         type: 'Contract'
       },
       responsibilities: `Rewrite the existing customer facing corporate websites using the latest in web technology. Collaborate with the marketing & IT departments to identify existing issues & gather requirements. Facilitate weekly demonstrations to ensure that our solutions meet expectations`,
-      skills: ['React', 'AstroJS', 'Javascript', 'Tailwind', 'Strapi', 'Azure'],
+      skills: ['React.js', 'Astro.js', 'Javascript', 'Tailwind', 'Strapi', 'Azure'],
       projectLinks: [
         {text: '', url: ''}
       ]

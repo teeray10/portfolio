@@ -6,20 +6,23 @@
                   lg:-inset-x-6 lg:block lg:group-hover:bg-slate-500/10 lg:group-hover:border-t lg:group-hover:drop-shadow-lg">
       </div>
       <div class="flex flex-col md:flex-row md:gap-10">
-        <div class="text-xs md:w-1/4">
-          <p class="font-normal lg:font-medium mt-1 text-nowrap">{{ job.timeline.text }}</p>
+        <div class="flex gap-2 items-center md:items-start md:w-1/4">
+          <h3 class="sm:hidden text-white text-nowrap font-semibold">{{ job.employer.name.toUpperCase() }}
+            <i class="inline-block lg:hidden group-hover:inline-block mt-1 lg:ml-2 h-3 w-3"><tr-new-tab-icon/></i>
+          </h3>
+          <p class="text-xs font-normal lg:font-medium sm:mt-1 text-nowrap">{{ job.timeline.text }}</p>
           <!--          <p class="font-medium my-1 uppercase">{{ job.employer.type }}</p>-->
           <!--          <p class="text-xs">{{ getDuration(job.timeline.startDate, job.timeline.endDate) }} </p>-->
           <!--          <p class="text-sm mt-1">{{ job.employer.description }}</p>-->
         </div>
         <div class="flex-1">
-          <div class="leading-snug py-2 md:pt-0 font-normal">
+          <div class="leading-snug pb-2 sm:py-2 md:pt-0 font-normal">
             <h3 class="hidden sm:inline text-white text-nowrap">{{ job.title }} · {{ job.employer.name.toUpperCase() }}
               <i class="inline-block lg:hidden group-hover:inline-block mt-1 lg:ml-2 h-3 w-3"><tr-new-tab-icon/></i>
             </h3>
-            <h3 class="sm:hidden text-white text-nowrap font-normal">{{ job.employer.name.toUpperCase() }}
+            <!-- <h3 class="sm:hidden text-white text-nowrap font-normal">{{ job.employer.name.toUpperCase() }}
               <i class="inline-block lg:hidden group-hover:inline-block mt-1 lg:ml-2 h-3 w-3"><tr-new-tab-icon/></i>
-            </h3>
+            </h3> -->
             <h3 class="sm:hidden text-white text-nowrap">{{ job.title }}</h3>
 
             @for (subtitle of job.subTitles; track subtitle) {
