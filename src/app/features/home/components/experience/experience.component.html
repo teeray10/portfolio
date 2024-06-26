@@ -1,45 +1,50 @@
 <tr-section-heading>Experience</tr-section-heading>
-<section class="text-light_grey flex flex-col gap-16 font-light lg:font-normal">
-  @for (job of jobs; track job) {
-    <div class="group relative">
-      <a class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition border-white/5
-                  lg:-inset-x-6 lg:block lg:group-hover:bg-slate-500/10 lg:group-hover:border-t lg:group-hover:drop-shadow-lg"
-          [href]="job.employer.url" target="_blank">
-      </a>
-      <div class="flex flex-col md:flex-row md:gap-10">
-        <div class="flex gap-2 items-center md:items-start md:w-1/4">
-          <a class="md:hidden text-white text-nowrap font-semibold" [href]="job.employer.url" target="_blank">
-            {{ job.employer.name.toUpperCase() }}
-            <i class="inline-block lg:hidden group-hover:inline-block mt-1 lg:ml-2 h-3 w-3"><tr-new-tab-icon/></i>
-          </a>
-          <p class="text-xs font-normal lg:font-medium sm:mt-1 text-nowrap">{{ job.timeline.text }}</p>
-          <!--          <p class="text-xs">{{ getDuration(job.timeline.startDate, job.timeline.endDate) }} </p>-->
-        </div>
-        <div class="flex-1">
-          <div class="leading-snug pb-2 sm:py-2 md:pt-0 font-medium">
-            <a class="hidden md:inline text-white text-nowrap hover:text-secondary lg:group-hover:text-secondary tracking-wider" [href]="job.employer.url" target="_blank">
-              {{ job.title }} · {{ job.employer.name.toUpperCase() }}
-              <i class="inline-block group-hover:inline-block w-3 lg:hidden lg:ml-1"><tr-arrow-right-icon /></i>
+<section class="text-light_grey font-light lg:font-normal">
+  <ul class="group/list flex flex-col gap-16 ">
+    @for (job of jobs; track job) {
+      <li class="group/item relative lg:group-hover/list:opacity-50 lg:hover:!opacity-100">
+        <a class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition border-white/5
+                    lg:-inset-x-6 lg:block lg:group-hover/item:bg-slate-500/10 lg:group-hover/item:border-t lg:group-hover/item:drop-shadow-lg"
+            [href]="job.employer.url" target="_blank">
+        </a>
+        <div class="flex flex-col md:flex-row md:gap-10">
+          <div class="flex gap-2 items-center md:items-start md:w-1/4">
+            <a class="md:hidden text-white text-nowrap font-semibold" [href]="job.employer.url" target="_blank">
+              {{ job.employer.name.toUpperCase() }}
+              <i class="inline-block lg:hidden group-hover/item:inline-block lg:ml-2 w-3"><tr-arrow-right-icon /></i>
             </a>
-            <h3 class="md:hidden text-white text-nowrap">{{ job.title }}</h3>
-
-            @for (subtitle of job.subTitles; track subtitle) {
-              <h4 class="opacity-60">{{ subtitle }}</h4>
-            }
+            <p class="text-xs font-normal tracking-widest lg:tracking-wider lg:font-medium sm:mt-1 text-nowrap">{{ job.timeline.text }}</p>
           </div>
-
-          <p class="leading-tight">{{ job.employer.description }}</p>
-
-          <p class="my-4 font-light text-sm">{{ job.responsibilities }}</p>
-
-          <div class="flex flex-wrap gap-2 text-secondary text-center mt-2">
-            @for (skill of job.skills; track skill) {
-              <span class="bg-blue rounded-full py-2 px-3 min-w-20 text-sm">{{ skill }}</span>
-            }
+          <div class="flex-1">
+            <div class="leading-snug pb-2 text-sm tracking-widest uppercase font-normal text-white sm:py-2 md:pt-0 ">
+              <a class="hidden group/link md:inline text-nowrap hover:text-secondary lg:group-hover/item:text-secondary" [href]="job.employer.url" target="_blank">
+                {{ job.title }} · {{ job.employer.name.toUpperCase() }}
+                <i class="inline-block transition-all duration-300 w-3
+                          lg:group-hover/item:translate-x-1 lg:group-hover/item:-translate-y-1
+                          group-hover/link:translate-x-1 group-hover/link:-translate-y-1">
+                  <tr-arrow-right-icon />
+                </i>
+              </a>
+              <h3 class="md:hidden text-white text-nowrap">{{ job.title }}</h3>
+  
+              @for (subtitle of job.subTitles; track subtitle) {
+                <h4 class="opacity-40">{{ subtitle }}</h4>
+              }
+            </div>
+  
+            <p class="leading-tight">{{ job.employer.description }}</p>
+  
+            <p class="my-4 font-light text-sm">{{ job.responsibilities }}</p>
+  
+            <div class="flex flex-wrap gap-2 text-secondary text-center mt-2">
+              @for (skill of job.skills; track skill) {
+                <span class="bg-blue rounded-full py-2 px-3 min-w-20 text-sm">{{ skill }}</span>
+              }
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  }
+      </li>
+    }
+  </ul>
   <!--      <span>{{ getDuration(experience[0].startDate, experience[0].endDate) }}</span>-->
 </section>
