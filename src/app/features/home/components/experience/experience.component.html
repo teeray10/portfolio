@@ -7,16 +7,16 @@
                     lg:-inset-x-6 lg:block lg:group-hover/item:bg-slate-500/10 lg:group-hover/item:border-t lg:group-hover/item:drop-shadow-lg"
             [href]="job.employer.url" target="_blank">
         </a>
-        <div class="flex flex-col md:flex-row md:gap-10">
+        <div class="flex flex-col md:flex-row md:gap-10 text-sm font-normal">
           <div class="flex gap-2 items-center md:items-start md:w-1/4">
-            <a class="md:hidden text-sm tracking-wider uppercase text-white text-nowrap font-semibold" [href]="job.employer.url" target="_blank">
+            <a class="md:hidden uppercase text-white text-nowrap font-semibold" [href]="job.employer.url" target="_blank">
               {{ job.employer.name }}
               <i class="inline-block lg:hidden group-hover/item:inline-block lg:ml-2 w-3"><tr-arrow-right-icon /></i>
             </a>
             <p class="text-xs font-normal tracking-widest lg:tracking-wider lg:font-medium sm:mt-1 text-nowrap">{{ job.timeline.text }}</p>
           </div>
-          <div class="flex-1">
-            <div class="leading-snug pb-2 text-sm tracking-wider font-semibold text-white sm:py-2 md:pt-0 ">
+          <div class="flex-1 text-sm">
+            <div class="leading-snug pb-2 tracking-widest uppercase font-normal text-white sm:py-2 md:pt-0 ">
               <a class="hidden group/link md:inline text-nowrap hover:text-secondary lg:group-hover/item:text-secondary" [href]="job.employer.url" target="_blank">
                 {{ job.title }} · {{ job.employer.name.toUpperCase() }}
                 <i class="inline-block transition-all duration-300 w-3
@@ -32,9 +32,9 @@
               }
             </div>
   
-            <p class="leading-tight text-sm">{{ job.employer.description }}</p>
+            <p class="leading-tight font-light">{{ job.employer.description }}</p>
   
-            <p class="my-4 font-light text-sm">{{ job.responsibilities }}</p>
+            <p class="my-4 font-light">{{ job.responsibilities }}</p>
   
             <div class="flex flex-wrap gap-2 text-secondary text-center mt-2">
               @for (skill of job.skills; track skill) {
