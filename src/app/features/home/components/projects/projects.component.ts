@@ -19,7 +19,7 @@ export class ProjectsComponent {
     {
       title: 'taylorray.dev',
       url: '',
-      description: 'I built this portfolio site using Angular 17 and various AWS services such as S3, Route53 & Cloudfront',
+      description: 'I built my portfolio site using Angular 17 and various AWS services such as S3, Route53 & Cloudfront',
       imageUrl: 'assets/taylorray.dev.png'
     },
     {

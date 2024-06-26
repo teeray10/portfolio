@@ -16,15 +16,15 @@
           <!--          <p class="text-xs">{{ getDuration(job.timeline.startDate, job.timeline.endDate) }} </p>-->
         </div>
         <div class="flex-1">
-          <div class="leading-snug pb-2 sm:py-2 md:pt-0 font-normal">
-            <a class="hidden md:inline text-white text-nowrap font-semibold hover:text-secondary lg:group-hover:text-secondary tracking-wide" [href]="job.employer.url" target="_blank">
+          <div class="leading-snug pb-2 sm:py-2 md:pt-0 font-medium">
+            <a class="hidden md:inline text-white text-nowrap hover:text-secondary lg:group-hover:text-secondary tracking-wider" [href]="job.employer.url" target="_blank">
               {{ job.title }} · {{ job.employer.name.toUpperCase() }}
               <i class="inline-block group-hover:inline-block w-3 lg:hidden lg:ml-1"><tr-arrow-right-icon /></i>
             </a>
             <h3 class="md:hidden text-white text-nowrap">{{ job.title }}</h3>
 
             @for (subtitle of job.subTitles; track subtitle) {
-              <h4 class="text-primary">{{ subtitle }}</h4>
+              <h4 class="opacity-60">{{ subtitle }}</h4>
             }
           </div>
 

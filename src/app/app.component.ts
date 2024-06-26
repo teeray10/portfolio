@@ -21,13 +21,13 @@ export class AppComponent implements AfterViewChecked {
 
   mouseX = 0;
   mouseY = 0;
-  background = 'radial-gradient(800px at center, rgba(78, 147, 165, 0.2), transparent 80%)';
+  background = 'transparent';
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(e: any) {
     this.mouseX = e.pageX;
     this.mouseY = e.pageY;
-    this.background = `radial-gradient(800px at ${e.pageX}px ${e.pageY}px, rgba(78, 147, 165, 0.2), transparent 80%)`;
+    this.background = `radial-gradient(600px at ${e.pageX}px ${e.pageY}px, rgba(78, 147, 165, 0.15), transparent 80%)`;
   }
 
   ngAfterViewChecked(): void {
