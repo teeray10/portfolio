@@ -13,7 +13,7 @@ export class ProjectsComponent {
     {
       title: 'Apleona UK',
       url: 'https://uk.apleona.com',
-      description: `A senior engineer and I were tasked with rewriting Apleona's corporate website. They needed the ability to create and update pages on their own. We achieved this using Astro.js for the frontend and Strapi - a headless CMS.`,
+      description: `A lead engineer and I were tasked with rewriting a corporate website for the UK divison of Apleona. They needed the ability to create and update pages on their own. We achieved this using Astro.js for the frontend and Strapi - a headless CMS.`,
       imageUrl: 'assets/apleona-uk.png'
     },
     {
