@@ -17,6 +17,12 @@ export class ProjectsComponent {
       imageUrl: 'assets/apleona-uk.png'
     },
     {
+      title: 'Apleona IRELAND',
+      url: 'https://apleona.ie',
+      description: `After a tremendously successful rewrite for the UK division of Apleona Group, we were asked to provide the same solution for the Ireland division. Rinse and repeat.`,
+      imageUrl: 'assets/apleona-ireland.png'
+    },
+    {
       title: 'taylorray.dev',
       url: '',
       description: 'I built my portfolio site using Angular 17 and various AWS services such as S3, Route53 & Cloudfront',

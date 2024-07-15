@@ -15,11 +15,11 @@ export class SkillsComponent {
     },
     {
       heading: 'Libraries & Frameworks',
-      skills: ['Angular', 'React.js', 'Astro.js', 'Tailwind', 'Strapi', 'NgRx', 'RxJs', 'Node.js']
+      skills: ['Angular', 'React.js', 'Astro.js', 'Tailwind', 'Strapi', 'NgRx', 'RxJs', 'Node.js', 'SignalR', 'SASS/LESS']
     },
     {
       heading: 'Tools & Platforms',
-      skills: ['Azure DevOps', 'Github', 'AWS', 'Webstorm', 'VS Code']
+      skills: ['Azure DevOps', 'OData', 'Github', 'AWS', 'Webstorm', 'VS Code']
     }
   ];
 }
