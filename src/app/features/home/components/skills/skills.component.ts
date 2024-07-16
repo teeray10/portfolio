@@ -15,7 +15,7 @@ export class SkillsComponent {
     },
     {
       heading: 'Libraries & Frameworks',
-      skills: ['Angular', 'React.js', 'Astro.js', 'Tailwind', 'Ant Design',  'SASS/LESS', 'Strapi', 'NgRx', 'RxJs', 'Node.js', 'SignalR']
+      skills: ['Angular', 'React.js', 'Astro.js', 'Tailwind', 'Ant Design', 'Kendo UI',  'SASS/LESS', 'Strapi', 'NgRx', 'RxJs', 'Node.js', 'SignalR']
     },
     {
       heading: 'Tools & Platforms',
