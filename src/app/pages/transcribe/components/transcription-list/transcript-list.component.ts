@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
-import {TranscribeService} from 'src/app/features/transcribe/transcribe.service';
-import {AsyncPipe, DatePipe} from '@angular/common';
-import {DownloadIconComponent} from 'src/app/features/transcribe/icons/download-icon/download-icon.component';
-import {RefreshIconComponent} from 'src/app/features/transcribe/icons/refresh-icon/refresh-icon.component';
-import {DeleteIconComponent} from 'src/app/features/transcribe/icons/delete-icon/delete-icon.component';
+import { AsyncPipe, DatePipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { DeleteIconComponent } from '@pages/transcribe/icons/delete-icon/delete-icon.component';
+import { DownloadIconComponent } from '@pages/transcribe/icons/download-icon/download-icon.component';
+import { RefreshIconComponent } from '@pages/transcribe/icons/refresh-icon/refresh-icon.component';
+import { TranscribeService } from '@pages/transcribe/transcribe.service';
 
 @Component({
   selector: 'tr-transcription-list',
@@ -13,9 +13,9 @@ import {DeleteIconComponent} from 'src/app/features/transcribe/icons/delete-icon
     DownloadIconComponent,
     RefreshIconComponent,
     DeleteIconComponent,
-    DatePipe
+    DatePipe,
   ],
-  templateUrl: './transcript-list.component.html'
+  templateUrl: './transcript-list.component.html',
 })
 export class TranscriptListComponent {
   loading = this.transcribeService.getLoading();
@@ -27,14 +27,14 @@ export class TranscriptListComponent {
   }
 
   refreshTranscript(id: string): void {
-    this.transcribeService.refreshTranscript(id)
+    this.transcribeService.refreshTranscript(id);
   }
 
   downloadTranscript(id: string): void {
-    this.transcribeService.downloadTranscript(id)
+    this.transcribeService.downloadTranscript(id);
   }
 
   deleteTranscript(id: string): void {
-    this.transcribeService.deleteTranscript(id)
+    this.transcribeService.deleteTranscript(id);
   }
 }

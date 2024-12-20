@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SectionHeadingComponent } from '@home/shared/ui/section-heading/section-heading.component';
+import { SectionHeadingComponent } from '@pages/home/shared/ui/section-heading/section-heading.component';
 import { IsVisibleDirective } from 'src/app/directives/is-visible.directive';
 
 @Component({
@@ -8,6 +8,4 @@ import { IsVisibleDirective } from 'src/app/directives/is-visible.directive';
   imports: [IsVisibleDirective, SectionHeadingComponent],
   templateUrl: './about.component.html',
 })
-export class AboutComponent {
-
-}
+export class AboutComponent {}

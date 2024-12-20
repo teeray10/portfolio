@@ -5,7 +5,7 @@ import {
   inject,
 } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { VisibleContentService } from '@home/utility/visible-content.service';
+import { VisibleContentService } from '@pages/home/utility/visible-content.service';
 
 @Component({
   selector: 'tr-root',

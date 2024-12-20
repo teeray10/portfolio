@@ -1,9 +1,9 @@
 import { AfterViewInit, Directive, ElementRef, inject } from '@angular/core';
-import { VisibleContentService } from 'src/app/features/home/utility/visible-content.service';
+import { VisibleContentService } from '@pages/home/utility/visible-content.service';
 
 @Directive({
   selector: '[IsVisible]',
-  standalone: true
+  standalone: true,
 })
 export class IsVisibleDirective implements AfterViewInit {
   private viewContainerRef = inject(ElementRef);
@@ -11,11 +11,14 @@ export class IsVisibleDirective implements AfterViewInit {
 
   ngAfterViewInit() {
     const observedElement = this.viewContainerRef.nativeElement;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        this.visibleContentService.setVisibleContent(entry.target.ariaLabel)
-      }
-    }, {threshold: 0.5})
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.visibleContentService.setVisibleContent(entry.target.ariaLabel);
+        }
+      },
+      { threshold: 0.5 }
+    );
     observer.observe(observedElement);
   }
 }

@@ -20,7 +20,7 @@
     "lib": ["ES2022", "dom"],
     "baseUrl": "./",
     "paths": {
-      "@home/*": ["./src/app/pages/home/*"]
+      "@pages/*": ["./src/app/pages/*"]
     }
   },
   "angularCompilerOptions": {

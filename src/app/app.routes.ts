@@ -1,14 +1,19 @@
-import {Routes} from '@angular/router';
-import {TranscribeComponent} from 'src/app/features/transcribe/transcribe.component';
-import {HomeComponent} from 'src/app/features/home/home.component';
+import { Routes } from '@angular/router';
+import { HomeComponent } from '@pages/home/home.component';
+import { StoreComponent } from '@pages/store/store.component';
+import { TranscribeComponent } from '@pages/transcribe/transcribe.component';
 
 export const routes: Routes = [
   {
     path: 'transcribe',
-    component: TranscribeComponent
+    component: TranscribeComponent,
+  },
+  {
+    path: 'store',
+    component: StoreComponent,
   },
   {
     path: '',
-    component: HomeComponent
-  }
+    component: HomeComponent,
+  },
 ];
