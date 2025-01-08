@@ -1,19 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ArrowRightIconComponent } from '@pages/home/icons/arrow-right-icon/arrow-right-icon.component';
-import { NewTabIconComponent } from '@pages/home/icons/new-tab-icon/new-tab-icon.component';
 import { SectionHeadingComponent } from '@pages/home/shared/ui/section-heading/section-heading.component';
 import { formatDuration, intervalToDuration } from 'date-fns';
 
 @Component({
   selector: 'tr-experience',
   standalone: true,
-  imports: [
-    CommonModule,
-    NewTabIconComponent,
-    SectionHeadingComponent,
-    ArrowRightIconComponent,
-  ],
+  imports: [CommonModule, SectionHeadingComponent, ArrowRightIconComponent],
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent {
@@ -25,8 +19,8 @@ export class ExperienceComponent {
         startDate: '2021-03-01',
         endDate: this.today,
       },
-      title: 'Intermediate Frontend Developer',
-      subTitles: ['Junior Frontend Developer', 'Graduate Developer'],
+      title: 'Frontend Developer',
+      subTitles: ['Graduate Developer'],
       employer: {
         name: 'DVT',
         description: 'Software development company based in South Africa',
@@ -48,9 +42,36 @@ export class ExperienceComponent {
     },
     {
       timeline: {
-        text: 'MAR 2024 — PRESENT',
-        startDate: '2024-03-01',
+        text: 'SEP 2024 — PRESENT',
+        startDate: '2024-09-01',
         endDate: this.today,
+      },
+      title: 'Frontend Developer',
+      subTitles: [],
+      employer: {
+        name: 'Momentum',
+        description: 'Insurance company and authorised FSP in South Africa',
+        url: 'https://www.momentum.co.za/',
+        type: 'Contract',
+      },
+      responsibilities: `Momentum had a legacy system that was set to be decommissioned in March 2025. I was tasked to rewrite the frontend using the latest version of Angular & Angular Material.`,
+      skills: [
+        'Angular',
+        'Angular Material',
+        'Typescript',
+        'Tailwind',
+        'Gitlab',
+        'Figma',
+        'JIRA',
+        'SSO',
+      ],
+      projectLinks: [{ text: '', url: '' }],
+    },
+    {
+      timeline: {
+        text: 'MAR 2024 - AUG 2024',
+        startDate: '2024-03-01',
+        endDate: '2024-08-31',
       },
       title: 'Frontend Developer',
       subTitles: [],
