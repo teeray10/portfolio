@@ -24,7 +24,7 @@ export class ExperienceComponent {
       employer: {
         name: 'DVT',
         description: 'Software development company based in South Africa',
-        url: 'https://dvt.co.za',
+        url: 'https://dvtsoftware.com/',
         type: 'Permanent',
       },
       responsibilities: `Design & implement critical business software solutions. Use creative frontend skills to develop & maintain  functional, appealing & production ready web apps. Run workshops for new graduates. Refactor outdated code to align with best practices. Consume & improve RESTful APIs. Ensure mobile responsiveness on a range of devices`,

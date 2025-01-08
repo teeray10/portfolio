@@ -11,6 +11,19 @@ import { SectionHeadingComponent } from '@pages/home/shared/ui/section-heading/s
 export class ProjectsComponent {
   projects = [
     {
+      title: 'Momentum Insure Portal',
+      url: '',
+      description: `Momentum asked me to be a part of a legacy system rewrite that was used by their brokers and clients. Alongside another frontend developer, we used Angular & Angular Material to provide a performant web application for their brokers.`,
+      imageUrl: 'assets/momentum.png',
+    },
+    {
+      title: 'taylorray.dev',
+      url: '',
+      description:
+        'I built my portfolio site using Angular 17 and various AWS services such as S3, Route53 & Cloudfront',
+      imageUrl: 'assets/taylorray.dev.png',
+    },
+    {
       title: 'Apleona UK',
       url: 'https://uk.apleona.com',
       description: `A lead engineer and I were tasked with rewriting a corporate website for the UK divison of Apleona. They needed the ability to create and update pages on their own. We achieved this using Astro.js for the frontend and Strapi - a headless CMS.`,
@@ -21,13 +34,6 @@ export class ProjectsComponent {
       url: 'https://apleona.ie',
       description: `After a tremendously successful rewrite for the UK division of Apleona Group, we were asked to provide the same solution for the Ireland division. Rinse and repeat.`,
       imageUrl: 'assets/apleona-ireland.png',
-    },
-    {
-      title: 'taylorray.dev',
-      url: '',
-      description:
-        'I built my portfolio site using Angular 17 and various AWS services such as S3, Route53 & Cloudfront',
-      imageUrl: 'assets/taylorray.dev.png',
     },
     {
       title: 'Audio Transcription App',
