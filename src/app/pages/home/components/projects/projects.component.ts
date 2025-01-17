@@ -11,9 +11,9 @@ import { SectionHeadingComponent } from '@pages/home/shared/ui/section-heading/s
 export class ProjectsComponent {
   projects = [
     {
-      title: 'Momentum Insure Portal',
+      title: 'Momentum Insure Broker Portal',
       url: '',
-      description: `Momentum asked me to be a part of a legacy system rewrite that was used by their brokers and clients. Alongside another frontend developer, we used Angular & Angular Material to provide a performant web application for their brokers.`,
+      description: `Momentum asked me to help rewrite a legacy system that was used by their brokers and clients. Alongside another front-end developer, we successfully built a modern and performant web application using Angular 18.`,
       imageUrl: 'assets/momentum.png',
     },
     {
@@ -26,7 +26,7 @@ export class ProjectsComponent {
     {
       title: 'Apleona UK',
       url: 'https://uk.apleona.com',
-      description: `A lead engineer and I were tasked with rewriting a corporate website for the UK divison of Apleona. They needed the ability to create and update pages on their own. We achieved this using Astro.js for the frontend and Strapi - a headless CMS.`,
+      description: `A lead engineer and I were tasked with rewriting a corporate website for the UK divison of Apleona. They needed the ability to create and update pages on their own. We achieved this using Astro.js for the front end and Strapi - a headless CMS.`,
       imageUrl: 'assets/apleona-uk.png',
     },
     {
